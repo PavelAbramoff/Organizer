@@ -7,25 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1243156528D207C000785B00 /* SheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1243156428D207BA00785B00 /* SheduleTableViewCell.swift */; };
+		1243156928D21A2700785B00 /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1243156828D21A2700785B00 /* UIStackView.swift */; };
+		12499A3D28D36F7A00B9DE97 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12499A3C28D36F7A00B9DE97 /* UILabel.swift */; };
+		12499A3F28D395B500B9DE97 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12499A3E28D395B400B9DE97 /* UIFont.swift */; };
 		125B66BC28CC7B7C00566739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66BB28CC7B7C00566739 /* AppDelegate.swift */; };
 		125B66BE28CC7B7C00566739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66BD28CC7B7C00566739 /* SceneDelegate.swift */; };
-		125B66C028CC7B7C00566739 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66BF28CC7B7C00566739 /* ViewController.swift */; };
-		125B66C328CC7B7C00566739 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B66C128CC7B7C00566739 /* Main.storyboard */; };
+		125B66C028CC7B7C00566739 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66BF28CC7B7C00566739 /* MainTabBarController.swift */; };
 		125B66C628CC7B7C00566739 /* Organizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 125B66C428CC7B7C00566739 /* Organizer.xcdatamodeld */; };
 		125B66C828CC7B8400566739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 125B66C728CC7B8400566739 /* Assets.xcassets */; };
 		125B66CB28CC7B8400566739 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125B66C928CC7B8400566739 /* LaunchScreen.storyboard */; };
+		125B66D628CC820C00566739 /* SheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66D528CC820B00566739 /* SheduleViewController.swift */; };
+		125B66D828CC823100566739 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125B66D728CC823100566739 /* TasksViewController.swift */; };
+		1269BEEF28D45A3F00E1AB2F /* TasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BEEE28D45A3E00E1AB2F /* TasksTableViewCell.swift */; };
+		1269BEF228D47A5400E1AB2F /* PressButtonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BEF128D47A5400E1AB2F /* PressButtonProtocols.swift */; };
+		1269BEF428D48BD100E1AB2F /* ScheduleOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BEF328D48BD000E1AB2F /* ScheduleOptionsTableViewController.swift */; };
+		1269BEFC28D4B67400E1AB2F /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BEFB28D4B67400E1AB2F /* OptionsTableViewCell.swift */; };
+		1269BEFE28D4C69100E1AB2F /* HeaderOptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BEFD28D4C69000E1AB2F /* HeaderOptionTableViewCell.swift */; };
+		1269BF0128D5AEDE00E1AB2F /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0028D5AEDE00E1AB2F /* AlertDate.swift */; };
+		1269BF0328D5DFE000E1AB2F /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0228D5DFDF00E1AB2F /* AlertTime.swift */; };
+		1269BF0528D5E2C600E1AB2F /* AlertForCellName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0428D5E2C600E1AB2F /* AlertForCellName.swift */; };
+		1269BF0728D5F36C00E1AB2F /* ScheduleColorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0628D5F36B00E1AB2F /* ScheduleColorsViewController.swift */; };
+		1269BF0928D5F3AC00E1AB2F /* TeachersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0828D5F3AC00E1AB2F /* TeachersViewController.swift */; };
+		1269BF0B28D5F73900E1AB2F /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1269BF0A28D5F73900E1AB2F /* UIAlertController.swift */; };
+		12729C7F28CF7E0200038507 /* Pods_Organizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24DFD1E7CEB6568ED53DC45F /* Pods_Organizer.framework */; };
+		12729C8028CF7E0200038507 /* Pods_Organizer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 24DFD1E7CEB6568ED53DC45F /* Pods_Organizer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1273265528D785C90071435F /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265428D785C80071435F /* ColorTableViewCell.swift */; };
+		1273265728D7903C0071435F /* TaskOptionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265628D7903B0071435F /* TaskOptionTableView.swift */; };
+		1273265B28D7A5A70071435F /* TaskColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265A28D7A5A60071435F /* TaskColorTableViewController.swift */; };
+		7746673028DB10C000874115 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746672F28DB10C000874115 /* ContactsTableViewController.swift */; };
+		7746673228DB32E300874115 /* ContaktsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673128DB32E300874115 /* ContaktsTableViewCell.swift */; };
+		7746673428DCCC6600874115 /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */; };
+		7746673628DD28C200874115 /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673528DD28C200874115 /* AlertFriendOrTeacher.swift */; };
+		7746673828DD452600874115 /* AlertPhotoCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673728DD452600874115 /* AlertPhotoCamera.swift */; };
+		776D756128E8FE9800A3E46F /* ScheduleModelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776D756028E8FE9800A3E46F /* ScheduleModelCell.swift */; };
+		776D756428E9056600A3E46F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 776D756328E9056600A3E46F /* Realm */; };
+		776D756628E9056600A3E46F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 776D756528E9056600A3E46F /* RealmSwift */; };
+		77A8E5BB2936828700AFF2EA /* AlertOk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A8E5BA2936828700AFF2EA /* AlertOk.swift */; };
+		77B4F0E8292793FB000FEC32 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4F0E7292793FB000FEC32 /* UIColor.swift */; };
+		77EB83A328F8B49C00FF7717 /* ScheduleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB83A228F8B49C00FF7717 /* ScheduleModel.swift */; };
+		77EB83A628F8BA1500FF7717 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77EB83A528F8BA1500FF7717 /* RealmManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		12729C8128CF7E0200038507 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				12729C8028CF7E0200038507 /* Pods_Organizer.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0659EC000E986EC2C3EFE0CD /* Pods-Organizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Organizer.release.xcconfig"; path = "Target Support Files/Pods-Organizer/Pods-Organizer.release.xcconfig"; sourceTree = "<group>"; };
+		1243156428D207BA00785B00 /* SheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleTableViewCell.swift; sourceTree = "<group>"; };
+		1243156828D21A2700785B00 /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		12499A3C28D36F7A00B9DE97 /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		12499A3E28D395B400B9DE97 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		125B66B828CC7B7C00566739 /* Organizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Organizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		125B66BB28CC7B7C00566739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		125B66BD28CC7B7C00566739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		125B66BF28CC7B7C00566739 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		125B66C228CC7B7C00566739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		125B66BF28CC7B7C00566739 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		125B66C528CC7B7C00566739 /* Organizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Organizer.xcdatamodel; sourceTree = "<group>"; };
 		125B66C728CC7B8400566739 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		125B66CA28CC7B8400566739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		125B66CC28CC7B8400566739 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		125B66D528CC820B00566739 /* SheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheduleViewController.swift; sourceTree = "<group>"; };
+		125B66D728CC823100566739 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		1269BEEE28D45A3E00E1AB2F /* TasksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTableViewCell.swift; sourceTree = "<group>"; };
+		1269BEF128D47A5400E1AB2F /* PressButtonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressButtonProtocols.swift; sourceTree = "<group>"; };
+		1269BEF328D48BD000E1AB2F /* ScheduleOptionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleOptionsTableViewController.swift; sourceTree = "<group>"; };
+		1269BEFB28D4B67400E1AB2F /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		1269BEFD28D4C69000E1AB2F /* HeaderOptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOptionTableViewCell.swift; sourceTree = "<group>"; };
+		1269BF0028D5AEDE00E1AB2F /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		1269BF0228D5DFDF00E1AB2F /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
+		1269BF0428D5E2C600E1AB2F /* AlertForCellName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForCellName.swift; sourceTree = "<group>"; };
+		1269BF0628D5F36B00E1AB2F /* ScheduleColorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleColorsViewController.swift; sourceTree = "<group>"; };
+		1269BF0828D5F3AC00E1AB2F /* TeachersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersViewController.swift; sourceTree = "<group>"; };
+		1269BF0A28D5F73900E1AB2F /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		1273265428D785C80071435F /* ColorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTableViewCell.swift; sourceTree = "<group>"; };
+		1273265628D7903B0071435F /* TaskOptionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableView.swift; sourceTree = "<group>"; };
+		1273265A28D7A5A60071435F /* TaskColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorTableViewController.swift; sourceTree = "<group>"; };
+		24DFD1E7CEB6568ED53DC45F /* Pods_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7746672F28DB10C000874115 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		7746673128DB32E300874115 /* ContaktsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaktsTableViewCell.swift; sourceTree = "<group>"; };
+		7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
+		7746673528DD28C200874115 /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
+		7746673728DD452600874115 /* AlertPhotoCamera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPhotoCamera.swift; sourceTree = "<group>"; };
+		776D756028E8FE9800A3E46F /* ScheduleModelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModelCell.swift; sourceTree = "<group>"; };
+		77A8E5BA2936828700AFF2EA /* AlertOk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertOk.swift; sourceTree = "<group>"; };
+		77B4F0E7292793FB000FEC32 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		77EB83A228F8B49C00FF7717 /* ScheduleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleModel.swift; sourceTree = "<group>"; };
+		77EB83A528F8BA1500FF7717 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		B0DED95BB370A4085269DC6D /* Pods-Organizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Organizer.debug.xcconfig"; path = "Target Support Files/Pods-Organizer/Pods-Organizer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +112,66 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776D756628E9056600A3E46F /* RealmSwift in Frameworks */,
+				776D756428E9056600A3E46F /* Realm in Frameworks */,
+				12729C7F28CF7E0200038507 /* Pods_Organizer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1243156228D2077600785B00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77EB83A128F8B47200FF7717 /* Realm */,
+				1269BEFF28D5AEC100E1AB2F /* Alert */,
+				1243156328D2079000785B00 /* Cell */,
+				776D756028E8FE9800A3E46F /* ScheduleModelCell.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1243156328D2079000785B00 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1269BEFD28D4C69000E1AB2F /* HeaderOptionTableViewCell.swift */,
+				1273265428D785C80071435F /* ColorTableViewCell.swift */,
+				1269BEFB28D4B67400E1AB2F /* OptionsTableViewCell.swift */,
+				1269BEFA28D4B61000E1AB2F /* Schedule */,
+				1269BEF928D4B60800E1AB2F /* Tasks */,
+				1269BEF828D4B5F900E1AB2F /* Contacts */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1243156628D219CA00785B00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1243156728D21A0200785B00 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		1243156728D21A0200785B00 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				1243156828D21A2700785B00 /* UIStackView.swift */,
+				12499A3C28D36F7A00B9DE97 /* UILabel.swift */,
+				12499A3E28D395B400B9DE97 /* UIFont.swift */,
+				1269BF0A28D5F73900E1AB2F /* UIAlertController.swift */,
+				77B4F0E7292793FB000FEC32 /* UIColor.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		125B66AF28CC7B7C00566739 = {
 			isa = PBXGroup;
 			children = (
 				125B66BA28CC7B7C00566739 /* Organizer */,
 				125B66B928CC7B7C00566739 /* Products */,
+				55C20EB77548CA3B47E17B07 /* Pods */,
+				A721D9232CDF72C179D3D74B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +186,154 @@
 		125B66BA28CC7B7C00566739 /* Organizer */ = {
 			isa = PBXGroup;
 			children = (
-				125B66BB28CC7B7C00566739 /* AppDelegate.swift */,
-				125B66BD28CC7B7C00566739 /* SceneDelegate.swift */,
-				125B66BF28CC7B7C00566739 /* ViewController.swift */,
-				125B66C128CC7B7C00566739 /* Main.storyboard */,
-				125B66C728CC7B8400566739 /* Assets.xcassets */,
-				125B66C928CC7B8400566739 /* LaunchScreen.storyboard */,
+				125B66D228CC7E3C00566739 /* Application */,
+				125B66D328CC7E5900566739 /* Controllers */,
+				1243156228D2077600785B00 /* Model */,
+				77EB83A428F8B93200FF7717 /* Services */,
+				1243156628D219CA00785B00 /* Extensions */,
+				1269BEF028D47A0100E1AB2F /* Protocols */,
+				125B66D428CC7E6400566739 /* Resources */,
 				125B66CC28CC7B8400566739 /* Info.plist */,
 				125B66C428CC7B7C00566739 /* Organizer.xcdatamodeld */,
 			);
 			path = Organizer;
+			sourceTree = "<group>";
+		};
+		125B66D228CC7E3C00566739 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				125B66BB28CC7B7C00566739 /* AppDelegate.swift */,
+				125B66BD28CC7B7C00566739 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		125B66D328CC7E5900566739 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				125B66BF28CC7B7C00566739 /* MainTabBarController.swift */,
+				1269BEF528D48C2400E1AB2F /* Schedule */,
+				1269BEF628D48C4600E1AB2F /* Tasks */,
+				1269BEF728D48C5D00E1AB2F /* Contacts */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		125B66D428CC7E6400566739 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				125B66C928CC7B8400566739 /* LaunchScreen.storyboard */,
+				125B66C728CC7B8400566739 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1269BEF028D47A0100E1AB2F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				1269BEF128D47A5400E1AB2F /* PressButtonProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		1269BEF528D48C2400E1AB2F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				125B66D528CC820B00566739 /* SheduleViewController.swift */,
+				1269BEF328D48BD000E1AB2F /* ScheduleOptionsTableViewController.swift */,
+				1269BF0628D5F36B00E1AB2F /* ScheduleColorsViewController.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1269BEF628D48C4600E1AB2F /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				125B66D728CC823100566739 /* TasksViewController.swift */,
+				1273265628D7903B0071435F /* TaskOptionTableView.swift */,
+				1273265A28D7A5A60071435F /* TaskColorTableViewController.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		1269BEF728D48C5D00E1AB2F /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7746672F28DB10C000874115 /* ContactsTableViewController.swift */,
+				7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */,
+				1269BF0828D5F3AC00E1AB2F /* TeachersViewController.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		1269BEF828D4B5F900E1AB2F /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				7746673128DB32E300874115 /* ContaktsTableViewCell.swift */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		1269BEF928D4B60800E1AB2F /* Tasks */ = {
+			isa = PBXGroup;
+			children = (
+				1269BEEE28D45A3E00E1AB2F /* TasksTableViewCell.swift */,
+			);
+			path = Tasks;
+			sourceTree = "<group>";
+		};
+		1269BEFA28D4B61000E1AB2F /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				1243156428D207BA00785B00 /* SheduleTableViewCell.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		1269BEFF28D5AEC100E1AB2F /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				1269BF0028D5AEDE00E1AB2F /* AlertDate.swift */,
+				1269BF0228D5DFDF00E1AB2F /* AlertTime.swift */,
+				1269BF0428D5E2C600E1AB2F /* AlertForCellName.swift */,
+				7746673528DD28C200874115 /* AlertFriendOrTeacher.swift */,
+				7746673728DD452600874115 /* AlertPhotoCamera.swift */,
+				77A8E5BA2936828700AFF2EA /* AlertOk.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		55C20EB77548CA3B47E17B07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B0DED95BB370A4085269DC6D /* Pods-Organizer.debug.xcconfig */,
+				0659EC000E986EC2C3EFE0CD /* Pods-Organizer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		77EB83A128F8B47200FF7717 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				77EB83A228F8B49C00FF7717 /* ScheduleModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		77EB83A428F8B93200FF7717 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				77EB83A528F8BA1500FF7717 /* RealmManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A721D9232CDF72C179D3D74B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24DFD1E7CEB6568ED53DC45F /* Pods_Organizer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,15 +343,22 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 125B66CF28CC7B8400566739 /* Build configuration list for PBXNativeTarget "Organizer" */;
 			buildPhases = (
+				C8FE99BA7B0B9CB05D38FF39 /* [CP] Check Pods Manifest.lock */,
 				125B66B428CC7B7C00566739 /* Sources */,
 				125B66B528CC7B7C00566739 /* Frameworks */,
 				125B66B628CC7B7C00566739 /* Resources */,
+				8AC8C4A86EF7AAC52880D3E3 /* [CP] Embed Pods Frameworks */,
+				12729C8128CF7E0200038507 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Organizer;
+			packageProductDependencies = (
+				776D756328E9056600A3E46F /* Realm */,
+				776D756528E9056600A3E46F /* RealmSwift */,
+			);
 			productName = Organizer;
 			productReference = 125B66B828CC7B7C00566739 /* Organizer.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +387,9 @@
 				Base,
 			);
 			mainGroup = 125B66AF28CC7B7C00566739;
+			packageReferences = (
+				776D756228E9056600A3E46F /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 125B66B928CC7B7C00566739 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,35 +406,98 @@
 			files = (
 				125B66CB28CC7B8400566739 /* LaunchScreen.storyboard in Resources */,
 				125B66C828CC7B8400566739 /* Assets.xcassets in Resources */,
-				125B66C328CC7B7C00566739 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8AC8C4A86EF7AAC52880D3E3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Organizer/Pods-Organizer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Organizer/Pods-Organizer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Organizer/Pods-Organizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8FE99BA7B0B9CB05D38FF39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Organizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		125B66B428CC7B7C00566739 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				125B66C028CC7B7C00566739 /* ViewController.swift in Sources */,
+				1269BEEF28D45A3F00E1AB2F /* TasksTableViewCell.swift in Sources */,
+				12499A3D28D36F7A00B9DE97 /* UILabel.swift in Sources */,
+				77A8E5BB2936828700AFF2EA /* AlertOk.swift in Sources */,
+				1269BEFC28D4B67400E1AB2F /* OptionsTableViewCell.swift in Sources */,
+				1273265728D7903C0071435F /* TaskOptionTableView.swift in Sources */,
+				77EB83A328F8B49C00FF7717 /* ScheduleModel.swift in Sources */,
+				1269BF0528D5E2C600E1AB2F /* AlertForCellName.swift in Sources */,
+				77EB83A628F8BA1500FF7717 /* RealmManager.swift in Sources */,
+				77B4F0E8292793FB000FEC32 /* UIColor.swift in Sources */,
+				1269BF0B28D5F73900E1AB2F /* UIAlertController.swift in Sources */,
+				125B66C028CC7B7C00566739 /* MainTabBarController.swift in Sources */,
+				1269BEFE28D4C69100E1AB2F /* HeaderOptionTableViewCell.swift in Sources */,
+				7746673828DD452600874115 /* AlertPhotoCamera.swift in Sources */,
+				1243156928D21A2700785B00 /* UIStackView.swift in Sources */,
+				1269BEF228D47A5400E1AB2F /* PressButtonProtocols.swift in Sources */,
+				7746673628DD28C200874115 /* AlertFriendOrTeacher.swift in Sources */,
+				776D756128E8FE9800A3E46F /* ScheduleModelCell.swift in Sources */,
+				1269BEF428D48BD100E1AB2F /* ScheduleOptionsTableViewController.swift in Sources */,
+				1243156528D207C000785B00 /* SheduleTableViewCell.swift in Sources */,
+				1269BF0928D5F3AC00E1AB2F /* TeachersViewController.swift in Sources */,
+				1269BF0728D5F36C00E1AB2F /* ScheduleColorsViewController.swift in Sources */,
 				125B66BC28CC7B7C00566739 /* AppDelegate.swift in Sources */,
+				7746673028DB10C000874115 /* ContactsTableViewController.swift in Sources */,
+				1269BF0328D5DFE000E1AB2F /* AlertTime.swift in Sources */,
+				12499A3F28D395B500B9DE97 /* UIFont.swift in Sources */,
+				7746673428DCCC6600874115 /* ContactOptionTableViewController.swift in Sources */,
 				125B66BE28CC7B7C00566739 /* SceneDelegate.swift in Sources */,
+				1273265528D785C90071435F /* ColorTableViewCell.swift in Sources */,
 				125B66C628CC7B7C00566739 /* Organizer.xcdatamodeld in Sources */,
+				1273265B28D7A5A70071435F /* TaskColorTableViewController.swift in Sources */,
+				125B66D628CC820C00566739 /* SheduleViewController.swift in Sources */,
+				1269BF0128D5AEDE00E1AB2F /* AlertDate.swift in Sources */,
+				7746673228DB32E300874115 /* ContaktsTableViewCell.swift in Sources */,
+				125B66D828CC823100566739 /* TasksViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		125B66C128CC7B7C00566739 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				125B66C228CC7B7C00566739 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		125B66C928CC7B8400566739 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,6 +625,7 @@
 		};
 		125B66D028CC7B8400566739 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0DED95BB370A4085269DC6D /* Pods-Organizer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -295,9 +635,9 @@
 				INFOPLIST_FILE = Organizer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -307,12 +647,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		125B66D128CC7B8400566739 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0659EC000E986EC2C3EFE0CD /* Pods-Organizer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,9 +663,9 @@
 				INFOPLIST_FILE = Organizer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -334,7 +675,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -360,6 +701,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		776D756228E9056600A3E46F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.30.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		776D756328E9056600A3E46F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776D756228E9056600A3E46F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		776D756528E9056600A3E46F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776D756228E9056600A3E46F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		125B66C428CC7B7C00566739 /* Organizer.xcdatamodeld */ = {
