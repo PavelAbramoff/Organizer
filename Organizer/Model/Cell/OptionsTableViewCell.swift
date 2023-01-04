@@ -29,7 +29,7 @@ class OptionsTableViewCell: UITableViewCell {
         let reapeatSwitch = UISwitch()
         reapeatSwitch.isOn = true
         reapeatSwitch.isHidden = true
-        reapeatSwitch.onTintColor = .blue
+      
         reapeatSwitch.translatesAutoresizingMaskIntoConstraints = false
         return reapeatSwitch
     }()
@@ -50,24 +50,20 @@ class OptionsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath) {
+    func cellScheduleConfigure(nameArray: [[String]], indexPath: IndexPath, hexColor: String) {
+        
         nameCellLabel.text = nameArray[indexPath.section][indexPath.row]
         
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .blue
-        }
+        let color = UIColor().colorFromHex(hexColor)
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? color : .white)
         
-        if indexPath == [4,0] {
-            reapeatSwitch.isHidden = false
-        }
+        reapeatSwitch.isHidden = (indexPath.section == 4 ? false : true)
+        reapeatSwitch.onTintColor = color
     }
     
     func cellTasksConfigure(nameArray: [String], indexPath: IndexPath) {
         nameCellLabel.text = nameArray[indexPath.section]
-        
-        if indexPath == [3,0] {
-            backgroundViewCell.backgroundColor = .blue
-        }
+        backgroundViewCell.backgroundColor = (indexPath.section == 3 ? #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1) : .white)
     }
     
     func cellContactConfigure(nameArray: [String], indexPath: IndexPath) {

@@ -123,6 +123,7 @@ extension SheduleViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 // MARK: FSCalendarDataSource, FSCalendarDelegate
+
 extension SheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -136,6 +137,7 @@ extension SheduleViewController: FSCalendarDataSource, FSCalendarDelegate {
 }
 
 // MARK: SetConstraints
+
 extension SheduleViewController {
     
     func setConstraints() {

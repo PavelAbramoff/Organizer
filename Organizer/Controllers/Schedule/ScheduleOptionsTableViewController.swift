@@ -1,5 +1,5 @@
 //
-//  OptionsScheduleViewController.swift
+//  ScheduleOptionsTableViewController.swift
 //  Organizer
 //
 //  Created by Pavel Абрамов on 16.09.2022.
@@ -9,7 +9,6 @@ import UIKit
 import RealmSwift
 
 class ScheduleOptionsTableViewController: UITableViewController {
-    
     
     private let idOptionsSchedolCell = "idOptionsSchedolCell"
     private let idOptionsHeader = "idOptionsHeader"
@@ -23,6 +22,8 @@ class ScheduleOptionsTableViewController: UITableViewController {
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
     private var scheduleModel = ScheduleModel()
+    
+    var hexColorCell = "8BD6F9"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +42,14 @@ class ScheduleOptionsTableViewController: UITableViewController {
     }
     
     @objc  private func saveButtonTapped() {
-        print("Save")
-       
+        scheduleModel.scheduleColor = hexColorCell
         RealmManager.shared.saveScheduleModel(model: scheduleModel)
         scheduleModel = ScheduleModel()
         alertOk(title: "Success")
-        tableView.reloadRows(at: [[0,0],[0,1],[1,0],[1,1],[1,2],[1,3],[2,0]], with: .none)
+        hexColorCell = "79D6F9"
+        tableView.reloadData()
+        print(hexColorCell)
     }
-    
-    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         5
@@ -68,7 +68,8 @@ class ScheduleOptionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsSchedolCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellScheduleConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        cell.cellScheduleConfigure(nameArray: cellNameArray, indexPath: indexPath, hexColor: hexColorCell)
+    
         cell.switchRepeatDelegate = self
         return cell
     }

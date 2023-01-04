@@ -19,7 +19,6 @@ class ColorTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setConstraints()
         
         self.selectionStyle = .none
@@ -32,14 +31,14 @@ class ColorTableViewCell: UITableViewCell {
     
     func cellConfigure(indexPath: IndexPath) {
         switch indexPath.section {
-        case 0: backgroundViewCell.backgroundColor = .red
-        case 1: backgroundViewCell.backgroundColor = .orange
-        case 2: backgroundViewCell.backgroundColor = .yellow
-        case 3: backgroundViewCell.backgroundColor = .green
-        case 4: backgroundViewCell.backgroundColor = .blue
-        case 5: backgroundViewCell.backgroundColor = .systemBlue
+        case 0: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+        case 1: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        case 2: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+        case 3: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        case 4: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        case 5: backgroundViewCell.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         default:
-            backgroundViewCell.backgroundColor = .purple
+            backgroundViewCell.backgroundColor = #colorLiteral(red: 0.5725490451, green: 0, blue: 0.2313725501, alpha: 1)
         }
     }
     

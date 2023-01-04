@@ -9,7 +9,7 @@ import UIKit
 
 extension UIColor {
     
-    func colorFromhex(_ hex: String) -> UIColor {
+    func colorFromHex(_ hex: String) -> UIColor {
         var hexString = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
         if hexString.hasPrefix("#") {
@@ -21,7 +21,7 @@ extension UIColor {
         }
         
         var rgb: UInt64 = 0
-        Scanner(string: hexString).scanInt64(&rgb)
+        Scanner(string: hexString).scanHexInt64(&rgb)
         
         return UIColor.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0,
                             green: CGFloat((rgb & 0xFF0000) >> 8) / 255.0,

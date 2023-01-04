@@ -29,7 +29,6 @@ extension UIViewController {
         
         alert.addAction(ok)
         alert.addAction(cancel)
-       // alert.negativeWidthConstraint()
         
         present(alert, animated: true, completion: nil)
     }
