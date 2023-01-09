@@ -9,9 +9,9 @@ import UIKit
 
 class ContaktsTableViewCell: UITableViewCell {
     
-    let contavtImageView: UIImageView = {
+    let contactImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "sky")
+        imageView.image = UIImage(systemName: "person.fill")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,7 @@ class ContaktsTableViewCell: UITableViewCell {
     override func layoutIfNeeded() {
         super.layoutSubviews()
         
-        contavtImageView.layer.cornerRadius = contavtImageView.frame.height / 2
+        contactImageView.layer.cornerRadius = contactImageView.frame.height / 2
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -56,20 +56,30 @@ class ContaktsTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configure(model: ContactModel) {
+        
+        nameLabel.text = model.contactsName
+        phoneLabel.text = model.contactsPhone
+        mailLabel.text = model.contactsMail
+        
+        guard let data = model.contactsImage, let image = UIImage(data: data) else { return }
+        contactImageView.image = image
+    }
+    
     func setConstraints() {
         
-        self.addSubview(contavtImageView)
+        self.addSubview(contactImageView)
         NSLayoutConstraint.activate([
-            contavtImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
-            contavtImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
-            contavtImageView.widthAnchor.constraint(equalToConstant: 70),
-            contavtImageView.heightAnchor.constraint(equalToConstant: 70)
+            contactImageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            contactImageView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15),
+            contactImageView.widthAnchor.constraint(equalToConstant: 70),
+            contactImageView.heightAnchor.constraint(equalToConstant: 70)
         ])
         
         self.addSubview(nameLabel)
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 15),
-            nameLabel.leadingAnchor.constraint(equalTo: contavtImageView.trailingAnchor, constant: 10),
+            nameLabel.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
             nameLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             nameLabel.heightAnchor.constraint(equalToConstant: 21)
         ])
@@ -78,7 +88,7 @@ class ContaktsTableViewCell: UITableViewCell {
         self.addSubview(stackView)
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 10),
-            stackView.leadingAnchor.constraint(equalTo: contavtImageView.trailingAnchor, constant: 10),
+            stackView.leadingAnchor.constraint(equalTo: contactImageView.trailingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
             stackView.heightAnchor.constraint(equalToConstant: 21)
         ])

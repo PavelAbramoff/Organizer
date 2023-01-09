@@ -38,7 +38,8 @@ class SheduleTableViewCell: UITableViewCell {
         
         lessonName.text = model.scheduleName
         teacherName.text = model.scheduleTeacher
-        lessonTime.text = dateFormater.string(from: model.scheduleTime)
+        guard let time = model.scheduleTime else { return }
+        lessonTime.text = dateFormater.string(from: time)
         lessonType.text = model.scheduleType
         lessonBulding.text = model.scheduleBuilding
         lessonAud.text = model.scheduleAudience

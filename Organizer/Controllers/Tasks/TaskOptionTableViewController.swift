@@ -1,5 +1,5 @@
 //
-//  TaskOptionTableView.swift
+//  TaskOptionTableViewController.swift
 //  Organizer
 //
 //  Created by Pavel Абрамов on 18.09.2022.
@@ -7,17 +7,22 @@
 
 import UIKit
 
-class TaskOptionTableView: UITableViewController {
+class TaskOptionTableViewController: UITableViewController {
     
     let idOptionsTaskCell = "idOptionsTaskCell"
     let idOptionsHeader = "idOptionsHeader"
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
-    
     let cellNameArray = ["Date", "Lesson", "Task", ""]
+    
+    var hexColorCell = "1A4766"
+    
+    private var taskModel = TasksModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Options Tasks"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,9 +31,33 @@ class TaskOptionTableView: UITableViewController {
         tableView.bounces = false
         tableView.register(OptionsTableViewCell.self, forCellReuseIdentifier: idOptionsTaskCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsHeader)
-        title = "Option"
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save,
+                                                            target: self,
+                                                            action: #selector(saveButtonTapped))
+        }
+    
+    @objc private func saveButtonTapped() {
+        
+        if taskModel.taskDate == nil || taskModel.taskName == "Unknown" {
+            alertOk(title: "Error", message: "Requered fileds: DATE, LESSON")
+        } else {
+            taskModel.taskColor = hexColorCell
+            RealmManager.shared.saveTaskModel(model: taskModel)
+            taskModel = TasksModel()
+            alertOk(title: "Success", message: nil)
+            hexColorCell = "1A4766"
+            tableView.reloadData()
+        }
     }
+    
+    private func pushControllers(vc: UIViewController) {
+        let viewController = vc
+        navigationController?.navigationBar.topItem?.title = "Options"
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    //MARK: UItableViewDelegate, UITableViewDataSourse
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
@@ -40,7 +69,7 @@ class TaskOptionTableView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsTaskCell, for: indexPath) as! OptionsTableViewCell
-        cell.cellTasksConfigure(nameArray: cellNameArray, indexPath: indexPath)
+        cell.cellTasksConfigure(nameArray: cellNameArray, indexPath: indexPath, hexColor: hexColorCell)
         return cell
     }
     
@@ -65,25 +94,19 @@ class TaskOptionTableView: UITableViewController {
         
         switch indexPath.section {
         case 0: alertDate(label: cell.nameCellLabel) {(numberWeekday , date) in
-            print(numberWeekday, date)
+            self.taskModel.taskDate = date
         }
             
         case 1: alertForCellName(label: cell.nameCellLabel, name: "Name", placeholder: "Enter name lesson") { text in
-            print(text)
+            self.taskModel.taskName = text
         }
         case 2: alertForCellName(label: cell.nameCellLabel, name: "Type", placeholder: "Enter type lesson") { text in
-            print(text)
+            self.taskModel.taskDesctiption = text
         }
         case 3: pushControllers(vc: TaskColorTableViewController())
         default:
             print("Tap OptionsTableView")
         }
-    }
-    
-    func pushControllers(vc: UIViewController) {
-        let viewController = vc
-        navigationController?.navigationBar.topItem?.title = "Options"
-        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 

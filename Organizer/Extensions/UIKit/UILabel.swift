@@ -17,7 +17,6 @@ extension UILabel {
         self.textAlignment = alignment
         self.adjustsFontSizeToFitWidth = true
         self.translatesAutoresizingMaskIntoConstraints = false
-       // self.backgroundColor = .red
     }
 }
 

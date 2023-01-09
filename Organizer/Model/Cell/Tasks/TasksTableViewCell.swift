@@ -42,6 +42,20 @@ class TasksTableViewCell: UITableViewCell {
     @objc func readyButtonTapped() {
         guard let index = index else { return }
         cellTaskDelegate?.readyButtonTapped(indexPath: index)
+
+    }
+    
+    func configure(model: TasksModel) {
+        
+        taskName.text = model.taskName
+        taskDescription.text = model.taskDesctiption
+        backgroundColor = UIColor().colorFromHex("\(model.taskColor)")
+        
+        if model.taskReady {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle.fill"), for: .normal)
+        } else {
+            readyButton.setBackgroundImage(UIImage(systemName: "chevron.down.circle"), for: .normal)
+        }
     }
     
     func setConstraints() {

@@ -17,6 +17,8 @@ class TaskColorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Color Tasks"
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = .systemGray6
@@ -24,8 +26,14 @@ class TaskColorTableViewController: UITableViewController {
         tableView.bounces = false
         tableView.register(ColorTableViewCell.self, forCellReuseIdentifier: idTaskColorCell)
         tableView.register(HeaderOptionTableViewCell.self, forHeaderFooterViewReuseIdentifier: idOptionsHeader)
-        title = "Color Tasks"
 
+    }
+    
+    private func setColor(color: String) {
+        let taskOptions = self.navigationController?.viewControllers[1] as? TaskOptionTableViewController
+        taskOptions?.hexColorCell = color
+        taskOptions?.tableView.reloadRows(at: [[3,0]], with: .none)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,11 +62,21 @@ class TaskColorTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return 30
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tap Cell")
+        switch indexPath.section {
+        case 0: setColor(color: "BE2813")
+        case 1: setColor(color: "EC3C1A")
+        case 2: setColor(color: "F5B433")
+        case 3: setColor(color: "77C344")
+        case 4: setColor(color: "3DACF7")
+        case 5: setColor(color: "8BD6F9")
+        case 6: setColor(color: "531B93")
+            default:
+            setColor(color: "FFFFFF")
+        }
     }
 }
 

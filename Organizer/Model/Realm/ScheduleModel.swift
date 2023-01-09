@@ -10,8 +10,8 @@ import Foundation
 
 class ScheduleModel: Object {
     
-    @Persisted var scheduleDate = Date()
-    @Persisted var scheduleTime = Date()
+    @Persisted var scheduleDate: Date?
+    @Persisted var scheduleTime: Date?
     @Persisted var scheduleName: String = "Unknown"
     @Persisted var scheduleType: String = "Unknown"
     @Persisted var scheduleBuilding: String = "Unknown"
