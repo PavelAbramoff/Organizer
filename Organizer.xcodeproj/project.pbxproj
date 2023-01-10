@@ -35,7 +35,7 @@
 		1273265528D785C90071435F /* ColorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265428D785C80071435F /* ColorTableViewCell.swift */; };
 		1273265728D7903C0071435F /* TaskOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265628D7903B0071435F /* TaskOptionTableViewController.swift */; };
 		1273265B28D7A5A70071435F /* TaskColorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1273265A28D7A5A60071435F /* TaskColorTableViewController.swift */; };
-		7746673028DB10C000874115 /* ContactsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746672F28DB10C000874115 /* ContactsTableViewController.swift */; };
+		7746673028DB10C000874115 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746672F28DB10C000874115 /* ContactsViewController.swift */; };
 		7746673228DB32E300874115 /* ContaktsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673128DB32E300874115 /* ContaktsTableViewCell.swift */; };
 		7746673428DCCC6600874115 /* ContactOptionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */; };
 		7746673628DD28C200874115 /* AlertFriendOrTeacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7746673528DD28C200874115 /* AlertFriendOrTeacher.swift */; };
@@ -96,7 +96,7 @@
 		1273265628D7903B0071435F /* TaskOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskOptionTableViewController.swift; sourceTree = "<group>"; };
 		1273265A28D7A5A60071435F /* TaskColorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskColorTableViewController.swift; sourceTree = "<group>"; };
 		24DFD1E7CEB6568ED53DC45F /* Pods_Organizer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Organizer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7746672F28DB10C000874115 /* ContactsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsTableViewController.swift; sourceTree = "<group>"; };
+		7746672F28DB10C000874115 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		7746673128DB32E300874115 /* ContaktsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaktsTableViewCell.swift; sourceTree = "<group>"; };
 		7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactOptionTableViewController.swift; sourceTree = "<group>"; };
 		7746673528DD28C200874115 /* AlertFriendOrTeacher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFriendOrTeacher.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 		1269BEF728D48C5D00E1AB2F /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
-				7746672F28DB10C000874115 /* ContactsTableViewController.swift */,
+				7746672F28DB10C000874115 /* ContactsViewController.swift */,
 				7746673328DCCC6600874115 /* ContactOptionTableViewController.swift */,
 				1269BF0828D5F3AC00E1AB2F /* TeachersViewController.swift */,
 			);
@@ -488,7 +488,7 @@
 				1269BF0928D5F3AC00E1AB2F /* TeachersViewController.swift in Sources */,
 				1269BF0728D5F36C00E1AB2F /* ScheduleColorsViewController.swift in Sources */,
 				125B66BC28CC7B7C00566739 /* AppDelegate.swift in Sources */,
-				7746673028DB10C000874115 /* ContactsTableViewController.swift in Sources */,
+				7746673028DB10C000874115 /* ContactsViewController.swift in Sources */,
 				1269BF0328D5DFE000E1AB2F /* AlertTime.swift in Sources */,
 				12499A3F28D395B500B9DE97 /* UIFont.swift in Sources */,
 				7746673428DCCC6600874115 /* ContactOptionTableViewController.swift in Sources */,

@@ -30,7 +30,7 @@ class MainTabBarController: UITabBarController {
         )
         
         let contactsViewController = createNavController(
-            vc: ContactsTableViewController(),
+            vc: ContactsViewController(),
             itemName: "Contacts",
             ItemName: "rectangle.stack.person.crop"
         )

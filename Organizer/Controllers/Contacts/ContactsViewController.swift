@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ContactsTableViewController: UITableViewController {
+class ContactsViewController: UIViewController {
     
     let searchController = UISearchController()
     
@@ -16,6 +16,14 @@ class ContactsTableViewController: UITableViewController {
     
     private let localRealm = try! Realm()
     private var contactsArray: Results<ContactModel>!
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .systemGray6
+        tableView.separatorStyle = .singleLine
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,42 +40,45 @@ class ContactsTableViewController: UITableViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.backgroundColor = .systemGray6
-        tableView.separatorStyle = .singleLine
         tableView.register(ContaktsTableViewCell.self, forCellReuseIdentifier: idContactkCell)
         
         title = "Contacts"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        setConstraints()
     }
     
     @objc func addButtonTapped() {
         let contactOption = ContactOptionTableViewController()
         navigationController?.pushViewController(contactOption, animated: true)
     }
+}
+
+//MARK: UITableViewDelegate, UITableViewDataSource
+
+extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    //MARK: UITableViewDelegate, UITableViewDataSource
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contactsArray.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactkCell, for: indexPath) as! ContaktsTableViewCell
         let model = contactsArray[indexPath.row]
         cell.configure(model: model)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Tap Cell")
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let editingRow = contactsArray[indexPath.row]
         
@@ -76,5 +87,20 @@ class ContactsTableViewController: UITableViewController {
             tableView.reloadData()
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+}
+
+extension ContactsViewController {
+    
+    private func setConstraints() {
+        
+        let stackView = UIStackView(arrangedSubviews: [tableView], axis: .vertical, spacing: 0, distribution: .fillProportionally)
+        view.addSubview(stackView)
+        NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+        ])
     }
 }
