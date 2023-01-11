@@ -20,8 +20,8 @@ extension UIViewController {
         }
         
         let teacher = UIAlertAction(title: "Teacher", style: .default) { _ in
-            label.text = "Friend"
-            let typeContact = "Friend"
+            label.text = "Teacher"
+            let typeContact = "Teacher"
             completionHandle(typeContact)
         }
         

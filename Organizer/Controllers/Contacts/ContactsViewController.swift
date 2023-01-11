@@ -10,20 +10,35 @@ import RealmSwift
 
 class ContactsViewController: UIViewController {
     
-    let searchController = UISearchController()
+    private let segmentedControl: UISegmentedControl = {
+        let segmentedControl = UISegmentedControl(items: ["Friends", "Teachers"])
+        segmentedControl.selectedSegmentIndex = 0
+        return segmentedControl
+    }()
     
-    let idContactkCell = "idContactkCell"
-    
-    private let localRealm = try! Realm()
-    private var contactsArray: Results<ContactModel>!
-    
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemGray6
         tableView.separatorStyle = .singleLine
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    private let searchController = UISearchController()
+    
+    private let idContactkCell = "idContactkCell"
+    
+    private let localRealm = try! Realm()
+    private var contactsArray: Results<ContactModel>!
+    private var filteredArray: Results<ContactModel>!
+    
+    var searchBarIsEmpty: Bool {
+        guard let text = searchController.searchBar.text else { return true }
+        return text.isEmpty
+    }
+    
+    var isFiltring: Bool {
+        return searchController.isActive && !searchBarIsEmpty
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,20 +48,38 @@ class ContactsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Contacts"
+        view.backgroundColor = .white
+        
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         
-        contactsArray = localRealm.objects(ContactModel.self)
+        
+        contactsArray = localRealm.objects(ContactModel.self).filter("contactsType  = 'Friend'")
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ContaktsTableViewCell.self, forCellReuseIdentifier: idContactkCell)
         
-        title = "Contacts"
+         tableView.register(ContaktsTableViewCell.self, forCellReuseIdentifier: idContactkCell)
+        
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
+        segmentedControl.addTarget(self, action: #selector(segmentChange), for: .valueChanged)
+        
         setConstraints()
+    }
+    
+    @objc private func segmentChange() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Friend'")
+            tableView.reloadData()
+        } else {
+            contactsArray = localRealm.objects(ContactModel.self).filter("contactsType = 'Teacher'")
+            tableView.reloadData()
+        }
     }
     
     @objc func addButtonTapped() {
@@ -55,17 +88,17 @@ class ContactsViewController: UIViewController {
     }
 }
 
-//MARK: UITableViewDelegate, UITableViewDataSource
+ //MARK: UITableViewDelegate, UITableViewDataSource
 
 extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        contactsArray.count
+        return (isFiltring ? filteredArray.count : contactsArray.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idContactkCell, for: indexPath) as! ContaktsTableViewCell
-        let model = contactsArray[indexPath.row]
+        let model = (isFiltring ? filteredArray[indexPath.row] : contactsArray[indexPath.row])
         cell.configure(model: model)
         return cell
     }
@@ -90,14 +123,26 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+extension ContactsViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        filteredContentForSearchText(searchController.searchBar.text!)
+    }
+    
+    private func filteredContentForSearchText(_ searchText: String) {
+        filteredArray = contactsArray.filter("contactsName CONTAINS[c] %@", searchText)
+        tableView.reloadData()
+    }
+}
+
 extension ContactsViewController {
     
     private func setConstraints() {
         
-        let stackView = UIStackView(arrangedSubviews: [tableView], axis: .vertical, spacing: 0, distribution: .fillProportionally)
+        let stackView = UIStackView(arrangedSubviews: [segmentedControl, tableView], axis: .vertical, spacing: 0, distribution: .equalSpacing)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(stackView)
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
             stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
