@@ -62,7 +62,7 @@ class ContactsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-         tableView.register(ContaktsTableViewCell.self, forCellReuseIdentifier: idContactkCell)
+         tableView.register(ContactsTableViewCell.self, forCellReuseIdentifier: idContactkCell)
         
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
@@ -86,6 +86,12 @@ class ContactsViewController: UIViewController {
         let contactOption = ContactOptionTableViewController()
         navigationController?.pushViewController(contactOption, animated: true)
     }
+    
+    @objc func editingMode(contactModel: ContactModel) {
+        let contactOption = ContactOptionTableViewController()
+        contactOption.contactModel = contactModel
+        navigationController?.pushViewController(contactOption, animated: true)
+    }
 }
 
  //MARK: UITableViewDelegate, UITableViewDataSource
@@ -97,7 +103,7 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: idContactkCell, for: indexPath) as! ContaktsTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: idContactkCell, for: indexPath) as! ContactsTableViewCell
         let model = (isFiltring ? filteredArray[indexPath.row] : contactsArray[indexPath.row])
         cell.configure(model: model)
         return cell
@@ -108,7 +114,8 @@ extension ContactsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Tap Cell")
+        let model = contactsArray[indexPath.row]
+        editingMode(contactModel: model)
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

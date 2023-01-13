@@ -16,12 +16,13 @@ class ContactOptionTableViewController: UITableViewController {
     private let cellNameArray = ["Name", "Phone", "Mail", "Type", ""]
     
     private var imageIsChanged = false
-    private var contactModel = ContactModel()
+    var contactModel = ContactModel()
+    var editModel = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Option"
+        title = "Option Contacs"
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -81,6 +82,8 @@ class ContactOptionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: idOptionsContactCell, for: indexPath) as! OptionsTableViewCell
+        
+        
         cell.cellContactConfigure(nameArray: cellNameArray, indexPath: indexPath)
         return cell
     }

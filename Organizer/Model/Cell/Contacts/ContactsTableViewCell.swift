@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContaktsTableViewCell: UITableViewCell {
+class ContactsTableViewCell: UITableViewCell {
     
     let contactImageView: UIImageView = {
         let imageView = UIImageView()
@@ -62,8 +62,11 @@ class ContaktsTableViewCell: UITableViewCell {
         phoneLabel.text = model.contactsPhone
         mailLabel.text = model.contactsMail
         
-        guard let data = model.contactsImage, let image = UIImage(data: data) else { return }
-        contactImageView.image = image
+        if let data = model.contactsImage, let image = UIImage(data: data) {
+            contactImageView.image = image
+        } else {
+            contactImageView.image = UIImage(systemName: "person.fill")
+        }
     }
     
     func setConstraints() {

@@ -13,7 +13,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
     private let idOptionsSchedolCell = "idOptionsSchedolCell"
     private let idOptionsHeader = "idOptionsHeader"
     
-    let cellNameArray = [["Date","Time"],
+    var cellNameArray = [["Date","Time"],
                          ["Name", "Type", "Bild", "Audience"],
                          ["Teacher Name"],
                          [""],
@@ -21,7 +21,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
     
     let headerNameArray = ["DATE AND TIME", "LESSON", "TEACHER", "COLOR", "PERIOD"]
     
-    private var scheduleModel = ScheduleModel()
+    var scheduleModel = ScheduleModel()
     
     var hexColorCell = "8BD6F9"
     
@@ -51,6 +51,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
             scheduleModel = ScheduleModel()
             alertOk(title: "Success", message: nil)
             hexColorCell = "79D6F9"
+            cellNameArray[2][0] = "Teacher Name"
             tableView.reloadData()
             print(hexColorCell)
         }
@@ -136,7 +137,7 @@ class ScheduleOptionsTableViewController: UITableViewController {
         }
             
         case [2,0]:
-            pushControllers(vc: TeachersViewController())
+            pushControllers(vc: TeachersTableViewController())
         case [3,0]:
             pushControllers(vc: ScheduleColorsViewController())
         default:
