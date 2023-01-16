@@ -90,6 +90,15 @@ class ContactsViewController: UIViewController {
     @objc func editingMode(contactModel: ContactModel) {
         let contactOption = ContactOptionTableViewController()
         contactOption.contactModel = contactModel
+        contactOption.editModel = true
+        contactOption.cellNameArray = [
+            contactModel.contactsName,
+            contactModel.contactsPhone,
+            contactModel.contactsMail,
+            contactModel.contactsType,
+            ""
+        ]
+        contactOption.imageIsChanged = true
         navigationController?.pushViewController(contactOption, animated: true)
     }
 }
